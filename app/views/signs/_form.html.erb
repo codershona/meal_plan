@@ -1,0 +1,28 @@
+<%= form_with(model: sign, local: true) do |form| %>
+  <% if sign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sign.errors.count, "error") %> prohibited this sign from being saved:</h2>
+
+      <ul>
+      <% sign.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "SIGN IN" %>
+  </div>
+
+<% end %>
